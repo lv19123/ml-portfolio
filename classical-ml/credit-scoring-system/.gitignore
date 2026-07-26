@@ -1,0 +1,59 @@
+# Виртуальное окружение и Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter и IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+
+# Локальные настройки и логи
+.env
+.env.*
+!.env.example
+*.log
+kaggle.json
+**/kaggle.json
+*.pem
+*.key
+catboost_info/
+
+# Исходные и производные данные
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Обученные модели
+models/*
+!models/.gitkeep
+!models/credit_scoring_model.joblib
+!models/credit_scoring_model_metadata.json
+
+# Большие/построчные отчёты; компактные portfolio-артефакты публикуются
+reports/figures/*
+!reports/figures/.gitkeep
+!reports/figures/calibration_curve.png
+!reports/figures/confusion_matrix.png
+!reports/figures/feature_importance.png
+!reports/figures/score_distribution.png
+reports/tables/*
+!reports/tables/.gitkeep
+!reports/tables/model_metrics.csv
+!reports/tables/final_evaluation.csv
+!reports/tables/final_evaluation.json
+!reports/tables/confusion_matrix.csv
+!reports/tables/feature_importance.csv
+!reports/tables/risk_segments.csv
+
+# Локальные выгрузки инференса
+predictions*.csv
+*_predictions.csv

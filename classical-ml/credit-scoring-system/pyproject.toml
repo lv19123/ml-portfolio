@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "home-credit-scoring"
+version = "0.1.0"
+description = "Reproducible credit-scoring pipeline for Home Credit Default Risk"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy==2.2.6",
+    "pandas==2.3.3",
+    "scikit-learn==1.7.2",
+    "catboost==1.2.10",
+    "matplotlib==3.10.9",
+    "joblib==1.5.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+notebook = ["jupyter==1.1.1"]
+
+[project.scripts]
+credit-train = "src.train:main"
+credit-evaluate = "src.evaluate:main"
+credit-predict = "src.predict:main"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

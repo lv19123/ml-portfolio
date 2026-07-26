@@ -1,0 +1,2 @@
+model_type,feature_set,is_smoke,n_rows,positive_rate,threshold,roc_auc,average_precision,brier_score,ks_statistic,accuracy,precision,recall,f1,true_negative,false_positive,false_negative,true_positive
+logistic,application,False,61503,0.08072776937710356,0.6433644304491768,0.7486001109254042,0.22854117877616478,0.2025357721609148,0.3724979451298642,0.8304635546233518,0.22212047212047212,0.43967774420946626,0.29513959305076726,48893,7645,2782,2183
