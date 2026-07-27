@@ -185,8 +185,8 @@ credit-scoring-system/
 Поддерживаемое окружение: Python 3.10–3.12.
 
 ```bash
-git clone <repository-url>
-cd credit-scoring-system
+git clone https://github.com/lv19123/ml-portfolio.git
+cd ml-portfolio/classical-ml/credit-scoring-system
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install --upgrade pip
@@ -343,8 +343,8 @@ files, метрики и notebook-контракты.
 Для Colab:
 
 ```python
-!git clone <repository-url> /content/credit-scoring-system
-%cd /content/credit-scoring-system
+!git clone https://github.com/lv19123/ml-portfolio.git /content/ml-portfolio
+%cd /content/ml-portfolio/classical-ml/credit-scoring-system
 !python3 -m pip install -r requirements-colab.txt
 ```
 

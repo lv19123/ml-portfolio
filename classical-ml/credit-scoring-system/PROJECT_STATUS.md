@@ -114,13 +114,14 @@ ROC-AUC `0.7655073854`, holdout AP `0.2498360063`. Эти значения не
 - Локальный Jupyter runtime заново не устанавливался и notebooks не
   перезапускались, чтобы сохранить их код и outputs. Их сохранённые Colab
   outputs и статические контракты проверены.
-- В рабочем каталоге нет Git metadata и `LICENSE`.
+- До переноса в monorepo локальный проект не имел собственной Git-истории
+  и отдельного `LICENSE`; поэтому он импортирован одним осмысленным коммитом.
 
 ## Как запустить проект
 
 ```bash
-git clone <repository-url>
-cd credit-scoring-system
+git clone https://github.com/lv19123/ml-portfolio.git
+cd ml-portfolio/classical-ml/credit-scoring-system
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install --upgrade pip
