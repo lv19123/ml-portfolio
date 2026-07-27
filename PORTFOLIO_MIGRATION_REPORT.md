@@ -4,9 +4,9 @@ Migration date: 27 July 2026
 
 Target repository: `lv19123/ml-portfolio`
 
-Working branch: `feature/consolidate-ml-portfolio`
+Default branch: `main`
 
-Draft pull request: `https://github.com/lv19123/ml-portfolio/pull/1`
+Migration status: completed
 
 ## Repository Structure
 
@@ -29,6 +29,20 @@ ml-portfolio/
 ```
 
 No nested Git repository or Git submodule is present.
+
+## Final State
+
+- Main repository: `lv19123/ml-portfolio`
+- Default branch: `main`
+- Visibility: public
+- All four projects are present in the monorepo.
+- The original Git histories were retained where available.
+- The Computer Vision application is deployed directly from the monorepo.
+- Streamlit deployment:
+  `https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app`
+- Streamlit entrypoint:
+  `computer-vision/person-background-replacement/app_streamlit.py`
+- Git LFS is used for the trained Keras model.
 
 ## Preserved History
 
@@ -87,7 +101,8 @@ These relocation-related changes were made inside projects:
     project directory rather than the process working directory.
 - `computer-vision/person-background-replacement/README.md`
   - documents the monorepo repository, branch and main file path for
-    Streamlit Community Cloud.
+    Streamlit Community Cloud;
+  - links to the active monorepo Streamlit deployment.
 
 - `classical-ml/credit-scoring-system/README.md`
   - replaced the placeholder clone command with the `ml-portfolio` URL;
@@ -148,9 +163,9 @@ No model training and no notebook execution was performed.
 - all nine Jupyter notebooks parse as valid JSON;
 - existing PNG, JPEG and MP4 assets were retained.
 
-The Person Background Replacement Streamlit URL responds with HTTP 303 and
-redirects anonymous users to Streamlit authorization. It cannot currently be
-verified as a public anonymous demo.
+The active Person Background Replacement deployment was verified in a browser.
+It loaded the `Background Replacement App` interface directly from the
+monorepo. The previous Streamlit URL is no longer referenced in the repository.
 
 ### Git LFS
 
@@ -184,25 +199,25 @@ videos remain below GitHub's per-file hard limit.
 
 ## Backup
 
-Mirror backups with all refs were created before consolidation:
-
-```text
-/Users/maria/Desktop/Projects/ml-portfolio-backups-20260727/
-├── person-background-replacement.git/
-├── ai-lecture-meeting-summarizer.git/
-└── student-ai-agent-telegram.git/
-```
+Local mirror backups with all refs were created before consolidation and
+should be retained by the repository owner.
 
 Git LFS objects were fetched into the mirror backup for the CV repository. The
 old GitHub repositories were not deleted.
+
+## Completed Pull Requests
+
+1. `#1` — consolidated all projects into the portfolio monorepo.
+2. `#2` — adapted Streamlit paths for execution from the monorepo.
+3. `#3` — updated the documentation with the new Streamlit deployment URL.
 
 ## GitHub
 
 - repository: `lv19123/ml-portfolio`;
 - visibility: public;
-- branch: `feature/consolidate-ml-portfolio`;
-- Draft PR: `https://github.com/lv19123/ml-portfolio/pull/1`;
-- automatic merge: not performed;
+- default branch: `main`;
+- pull requests `#1`, `#2` and `#3`: merged;
+- Streamlit deployment: active from the monorepo;
 - description: configured as requested;
 - topics: `machine-learning`, `data-science`, `deep-learning`,
   `computer-vision`, `nlp`, `llm`, `rag`, `ai-agents`, `credit-scoring`,
@@ -216,33 +231,38 @@ Important consolidation commits include:
 - `6dfe023` — AI Agent subtree import;
 - `50a91ee` — `feat: add credit scoring system`;
 - `2893262` — `docs: create portfolio overview`;
-- `8e03f12` — `docs: update credit scoring monorepo paths`.
+- `8e03f12` — `docs: update credit scoring monorepo paths`;
+- `daa82a8` — `fix: support Streamlit deployment from monorepo`;
+- `b44b76e` — `docs: update Streamlit deployment URL`.
 
-## Old Repositories
+## Legacy Repositories
 
-| Repository | Current visibility | Action | Reason |
-|---|---|---|---|
-| `lv19123/person-background-replacement` | Public | Not changed | Streamlit source/access must be migrated and verified first |
-| `lv19123/ai-lecture-meeting-summarizer` | Public | Not changed | Draft PR must be reviewed and merged; GitHub CLI is unavailable |
-| `lv19123/student-ai-agent-telegram` | Public | Not changed | Draft PR must be reviewed and merged; GitHub CLI is unavailable |
+The original repositories are retained as recoverable backups. They were not
+archived, deleted, modified or history-rewritten during consolidation.
 
-The repositories were not archived or deleted.
+The active public portfolio and Streamlit deployment no longer depend on the
+legacy repository URLs.
 
-## Manual Actions Required
+## Remaining Manual Actions
 
-1. Review and merge Draft PR `#1` into `main` when satisfied.
-2. In Streamlit Community Cloud, point the background-replacement deployment
-   to repository `lv19123/ml-portfolio`, branch `main`, and entrypoint
-   `computer-vision/person-background-replacement/app_streamlit.py`; then
-   verify anonymous access and image/video inference.
-3. Update any resume, application or saved links that still point to the three
-   old repository URLs.
-4. After the merged `main` branch and Streamlit deployment are verified, open
-   each old repository on GitHub and use:
-   `Settings` → `General` → `Danger Zone` →
-   `Change repository visibility` → `Make private`.
-5. Repeat the visibility change for all three old repositories. Do not delete
-   them; keep the local mirror backups.
+The migration and Streamlit deployment are complete. The available GitHub
+integration cannot change repository visibility, so the owner must make each
+legacy repository private through:
 
-Until those manual cutover steps are complete, `ml-portfolio` is ready for
-review but is not yet the only public repository.
+```text
+Repository
+→ Settings
+→ General
+→ Danger Zone
+→ Change repository visibility
+→ Make private
+```
+
+Apply this to:
+
+- `lv19123/person-background-replacement`
+- `lv19123/ai-lecture-meeting-summarizer`
+- `lv19123/student-ai-agent-telegram`
+
+Do not archive or permanently delete these repositories. The local mirror
+backups should be retained.

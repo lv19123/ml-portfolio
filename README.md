@@ -227,14 +227,18 @@ On Windows, activate a virtual environment with
 
 ## Project Status
 
-All four project snapshots are present in the monorepo. Their original
-structure and Git history were retained where a source history existed. Each
-project has independent limitations documented in its own README.
+All four projects are available in this monorepo with independent dependencies,
+documentation and run instructions.
 
-The CV Streamlit deployment currently redirects anonymous requests to
-Streamlit authorization. Its hosting source and access settings must be checked
-and migrated to this monorepo before the legacy CV repository can safely be
-made private.
+The original Git histories of the existing projects were retained during
+consolidation. The Computer Vision application is deployed on Streamlit
+Community Cloud directly from this repository.
+
+- [Open the Streamlit application](https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app)
+- [Open Credit Scoring System](classical-ml/credit-scoring-system/)
+- [Open Person Background Replacement](computer-vision/person-background-replacement/)
+- [Open AI Lecture / Meeting Summarizer](nlp-llm/ai-lecture-meeting-summarizer/)
+- [Open Student AI Agent](ai-agents/student-ai-agent-telegram/)
 
 ## Contact
 
