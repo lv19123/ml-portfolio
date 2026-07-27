@@ -209,15 +209,18 @@ old GitHub repositories were not deleted.
 
 1. `#1` — consolidated all projects into the portfolio monorepo.
 2. `#2` — adapted Streamlit paths for execution from the monorepo.
-3. `#3` — updated the documentation with the new Streamlit deployment URL.
+3. `#3` — updated the documentation with the active Streamlit deployment URL.
+4. `#4` — finalized the portfolio migration documentation and removed outdated migration warnings.
 
 ## GitHub
 
 - repository: `lv19123/ml-portfolio`;
 - visibility: public;
 - default branch: `main`;
-- pull requests `#1`, `#2` and `#3`: merged;
-- Streamlit deployment: active from the monorepo;
+- pull requests `#1`, `#2`, `#3` and `#4`: merged;
+- Streamlit deployment: active directly from the monorepo;
+- public portfolio repository: `lv19123/ml-portfolio`;
+- the legacy project repositories are retained as private backups.
 - description: configured as requested;
 - topics: `machine-learning`, `data-science`, `deep-learning`,
   `computer-vision`, `nlp`, `llm`, `rag`, `ai-agents`, `credit-scoring`,
@@ -233,36 +236,26 @@ Important consolidation commits include:
 - `2893262` — `docs: create portfolio overview`;
 - `8e03f12` — `docs: update credit scoring monorepo paths`;
 - `daa82a8` — `fix: support Streamlit deployment from monorepo`;
-- `b44b76e` — `docs: update Streamlit deployment URL`.
+- `b44b76e` — `docs: update Streamlit deployment URL`;
+- `2583a72` — `docs: finalize portfolio migration status`.
 
 ## Legacy Repositories
 
-The original repositories are retained as recoverable backups. They were not
-archived, deleted, modified or history-rewritten during consolidation.
+The original project repositories are retained as private backups. They were
+not deleted, archived or history-rewritten.
 
-The active public portfolio and Streamlit deployment no longer depend on the
-legacy repository URLs.
+| Repository | Final visibility | Purpose |
+|---|---|---|
+| `lv19123/person-background-replacement` | Private | Recoverable backup of the original CV repository |
+| `lv19123/ai-lecture-meeting-summarizer` | Private | Recoverable backup of the original NLP/LLM repository |
+| `lv19123/student-ai-agent-telegram` | Private | Recoverable backup of the original AI Agent repository |
+
+The active public portfolio and Streamlit deployment depend only on
+`lv19123/ml-portfolio`.
 
 ## Remaining Manual Actions
 
-The migration and Streamlit deployment are complete. The available GitHub
-integration cannot change repository visibility, so the owner must make each
-legacy repository private through:
+No required migration actions remain.
 
-```text
-Repository
-→ Settings
-→ General
-→ Danger Zone
-→ Change repository visibility
-→ Make private
-```
-
-Apply this to:
-
-- `lv19123/person-background-replacement`
-- `lv19123/ai-lecture-meeting-summarizer`
-- `lv19123/student-ai-agent-telegram`
-
-Do not archive or permanently delete these repositories. The local mirror
-backups should be retained.
+The three legacy project repositories are retained as private backups. The
+local mirror backups should also be retained and must not be deleted.
