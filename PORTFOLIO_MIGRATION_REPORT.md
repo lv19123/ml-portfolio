@@ -74,10 +74,20 @@ caches, local credentials and ignored temporary files were not imported.
 
 ## Changes Inside Projects
 
-No code, model architecture, dependency file, experiment output, image, video
-or notebook was changed in the three imported GitHub projects.
+No model architecture, dependency file, experiment output, image, video or
+notebook was changed in the imported GitHub projects.
 
-Only these relocation-related changes were made inside a project:
+These relocation-related changes were made inside projects:
+
+- `computer-vision/person-background-replacement/app_streamlit.py`
+  - resolves the CV project directory from `__file__`;
+  - adds that directory to `sys.path` before importing the local `src`
+    package;
+  - resolves the default model and Streamlit output directory from the CV
+    project directory rather than the process working directory.
+- `computer-vision/person-background-replacement/README.md`
+  - documents the monorepo repository, branch and main file path for
+    Streamlit Community Cloud.
 
 - `classical-ml/credit-scoring-system/README.md`
   - replaced the placeholder clone command with the `ml-portfolio` URL;

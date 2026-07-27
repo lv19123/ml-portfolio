@@ -2,7 +2,13 @@
 
 from io import BytesIO
 from pathlib import Path
+import sys
 import tempfile
+
+PROJECT_DIR = Path(__file__).resolve().parent
+
+if str(PROJECT_DIR) not in sys.path:
+    sys.path.insert(0, str(PROJECT_DIR))
 
 import numpy as np
 from PIL import Image
@@ -18,8 +24,8 @@ from src.inference import (
 from src.video import replace_video_background
 
 
-DEFAULT_MODEL_PATH = Path("models/mobile_unet_model.keras")
-OUTPUT_DIR = Path("outputs") / "streamlit"
+DEFAULT_MODEL_PATH = PROJECT_DIR / "models" / "mobile_unet_model.keras"
+OUTPUT_DIR = PROJECT_DIR / "outputs" / "streamlit"
 IMAGE_RESULT_PATH = OUTPUT_DIR / "result_image.png"
 IMAGE_MASK_PATH = OUTPUT_DIR / "mask_image.png"
 VIDEO_RESULT_PATH = OUTPUT_DIR / "result_video.mp4"
