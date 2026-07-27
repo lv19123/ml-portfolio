@@ -77,6 +77,15 @@ pip install -r requirements.txt
 streamlit run app_streamlit.py
 ```
 
+## Streamlit Community Cloud deployment
+
+```text
+Repository: lv19123/ml-portfolio
+Branch: main
+Main file path:
+computer-vision/person-background-replacement/app_streamlit.py
+```
+
 ## CLI-инференс
 
 Инференс для изображения:
