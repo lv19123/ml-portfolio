@@ -1,0 +1,13 @@
+.venv
+__pycache__
+**/__pycache__
+.pytest_cache
+.git
+.env
+data/uploads/*
+data/processed/*
+data/reports/*
+data/vector_db/*
+data/materials.json
+*.pyc
+.DS_Store
