@@ -6,7 +6,7 @@ Person Background Replacement — веб-приложение для замен�
 
 ## Демо
 
-**Live app:** [person-background-replacement Streamlit demo](https://person-background-replacement-4a4wyhoyvftepbrytn6xff.streamlit.app)
+**Live app:** [person-background-replacement Streamlit demo](https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app)
 
 ### Демо для изображений
 

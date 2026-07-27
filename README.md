@@ -111,7 +111,7 @@ here.
 ![Person background replacement result](computer-vision/person-background-replacement/assets/readme_image1.png)
 
 [Open Person Background Replacement](computer-vision/person-background-replacement/)
-· [Open Streamlit deployment](https://person-background-replacement-4a4wyhoyvftepbrytn6xff.streamlit.app)
+· [Open Streamlit deployment](https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app)
 
 ## NLP & LLM Applications
 
