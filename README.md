@@ -46,6 +46,7 @@ or when every part of a project was completed.
 |---|---|---|---|
 | [Credit Scoring System](classical-ml/credit-scoring-system/) | Classical ML | Reproducible probability-of-default pipeline with evaluation and CLI inference | Ready with documented limitations |
 | [Person Background Replacement](computer-vision/person-background-replacement/) | Deep Learning / CV | Mobile U-Net person segmentation for image and video background replacement | Portfolio project; deployment URL retained |
+| [Automatic Face Cropper](computer-vision/automatic-face-cropper/) | Computer Vision | Face detection and rectangular cropping with Haar Cascade, YuNet and batch processing | Ready |
 | [AI Lecture / Meeting Summarizer](nlp-llm/ai-lecture-meeting-summarizer/) | NLP / LLM | Document, audio, video and YouTube processing with reports, exports and RAG Q&A | Portfolio MVP |
 | [Student AI Agent for Telegram](ai-agents/student-ai-agent-telegram/) | AI Agents / RAG | Telegram assistant with tools, local-material retrieval and conversation memory | Portfolio project |
 
@@ -113,6 +114,53 @@ here.
 [Open Person Background Replacement](computer-vision/person-background-replacement/)
 · [Open Streamlit deployment](https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app)
 
+### Automatic Face Cropper
+
+A practical Computer Vision utility originally created for a freelance task. It
+detects faces in an image, selects the largest bounding box, expands the
+detected region and saves the resulting face crop as a separate image.
+
+Key capabilities:
+
+- single-image processing through a command-line interface;
+- Haar Cascade and OpenCV YuNet face detectors;
+- automatic selection of the largest detected face;
+- configurable bounding-box expansion and rectangular face cropping;
+- optional rotation checks at 0°, 90°, 180° and 270°;
+- batch processing with CSV reports;
+- safe handling of corrupted images;
+- skipping existing outputs and forced processing through `--overwrite`.
+
+The project performs face detection and rectangular cropping rather than
+pixel-level face or head segmentation.
+
+<table>
+  <tr>
+    <th align="center">Input</th>
+    <th align="center">Haar Cascade</th>
+    <th align="center">YuNet</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="computer-vision/automatic-face-cropper/examples/document.jpg"
+           alt="Automatic Face Cropper input"
+           width="260">
+    </td>
+    <td align="center">
+      <img src="computer-vision/automatic-face-cropper/examples/haar_face.jpg"
+           alt="Haar Cascade face crop"
+           width="180">
+    </td>
+    <td align="center">
+      <img src="computer-vision/automatic-face-cropper/examples/yunet_face.jpg"
+           alt="YuNet face crop"
+           width="180">
+    </td>
+  </tr>
+</table>
+
+[Open Automatic Face Cropper](computer-vision/automatic-face-cropper/)
+
 ## NLP & LLM Applications
 
 ### AI Lecture / Meeting Summarizer
@@ -175,6 +223,7 @@ ml-portfolio/
 ├── classical-ml/
 │   └── credit-scoring-system/
 ├── computer-vision/
+│   ├── automatic-face-cropper/
 │   └── person-background-replacement/
 ├── nlp-llm/
 │   └── ai-lecture-meeting-summarizer/
@@ -219,6 +268,7 @@ Each project README contains its exact data, environment and run instructions:
 
 - [Credit Scoring System instructions](classical-ml/credit-scoring-system/README.md)
 - [Person Background Replacement instructions](computer-vision/person-background-replacement/README.md)
+- [Automatic Face Cropper instructions](computer-vision/automatic-face-cropper/README.md)
 - [AI Lecture / Meeting Summarizer instructions](nlp-llm/ai-lecture-meeting-summarizer/README.md)
 - [Student AI Agent instructions](ai-agents/student-ai-agent-telegram/README.md)
 
@@ -227,7 +277,7 @@ On Windows, activate a virtual environment with
 
 ## Project Status
 
-All four projects are available in this monorepo with independent dependencies,
+All five projects are available in this monorepo with independent dependencies,
 documentation and run instructions.
 
 The original Git histories of the existing projects were retained during
@@ -237,6 +287,7 @@ Community Cloud directly from this repository.
 - [Open the Streamlit application](https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app)
 - [Open Credit Scoring System](classical-ml/credit-scoring-system/)
 - [Open Person Background Replacement](computer-vision/person-background-replacement/)
+- [Open Automatic Face Cropper](computer-vision/automatic-face-cropper/)
 - [Open AI Lecture / Meeting Summarizer](nlp-llm/ai-lecture-meeting-summarizer/)
 - [Open Student AI Agent](ai-agents/student-ai-agent-telegram/)
 

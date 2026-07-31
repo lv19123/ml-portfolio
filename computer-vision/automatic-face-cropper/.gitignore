@@ -1,0 +1,26 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+.DS_Store
+Thumbs.db
+
+*.log
+*.tmp
+*.swp
+*~
+
+# Локальные входы, batch-результаты и отчёты
+local_data/
+
+# В examples публикуются только три демонстрационных изображения
+examples/*
+!examples/document.jpg
+!examples/haar_face.jpg
+!examples/yunet_face.jpg
