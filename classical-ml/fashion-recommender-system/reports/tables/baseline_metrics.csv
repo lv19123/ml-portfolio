@@ -1,0 +1,4 @@
+model,Recall@12,MAP@12,HitRate@12,users_evaluated,average_candidates,notes
+Popularity,0.01625,0.004118948412698413,0.017,2000,12,Top-12 baseline; common cohort
+Recent Personal History,0.016,0.006148944805194805,0.0175,2000,12,Top-12 baseline; common cohort
+Frequent Personal History,0.016,0.0061406114718614725,0.0175,2000,12,Top-12 baseline; common cohort

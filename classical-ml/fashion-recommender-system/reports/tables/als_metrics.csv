@@ -1,0 +1,2 @@
+model,Candidate Recall,Recall@12,MAP@12,HitRate@12,users_evaluated,average_candidates,training_time,notes
+ALS,0.04085,0.0047666666666666664,0.0013332323232323232,0.0055,2000,200.0,53.611119852,ALS Top-200 candidates

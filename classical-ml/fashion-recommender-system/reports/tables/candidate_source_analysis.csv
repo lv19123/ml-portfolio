@@ -1,0 +1,5 @@
+source,candidate_pairs,candidate_recall
+ALS,300000,0.03318333333333333
+Content-Based,100000,0.0035
+Personal History,7433,0.00575
+Popularity,60000,0.022166666666666664

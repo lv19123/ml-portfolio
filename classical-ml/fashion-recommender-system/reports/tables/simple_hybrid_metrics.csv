@@ -1,0 +1,2 @@
+model,Recall@12,MAP@12,HitRate@12,Candidate Recall,users_evaluated,average_candidates,notes
+Simple Hybrid,0.003166666666666667,0.0013694444444444442,0.0035,0.05734999999999999,2000,222.5615,Fixed 0.5/0.3/0.1/0.1 weights

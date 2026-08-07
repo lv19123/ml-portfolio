@@ -5,9 +5,10 @@ NLP, LLM and AI Agent projects developed throughout my studies and independent
 practice.
 
 The repository demonstrates practical work ranging from classical machine
-learning on tabular data to neural-network segmentation, document and media
-processing, retrieval-augmented generation, and tool-using AI agents. Each
-project remains self-contained, with its own dependencies and run instructions.
+learning and recommender systems to neural-network segmentation, document and
+media processing, retrieval-augmented generation, and tool-using AI agents.
+Each project remains self-contained, with its own dependencies and run
+instructions.
 
 ## About Me
 
@@ -28,6 +29,7 @@ authors, commit messages, and commit dates remain available in this monorepo.
 | 25 June 2026 | Person Background Replacement | Deep learning, segmentation, image/video inference |
 | 28 June 2026 | AI Lecture / Meeting Summarizer | NLP pipelines, speech-to-text, RAG, API and web UI |
 | 27 July 2026 | Credit Scoring System first recorded in Git | Tabular ML, leakage-safe validation, evaluation and CLI inference |
+| 8 August 2026 | Fashion Recommender System added to the portfolio | Implicit feedback, temporal validation, retrieval and ranking |
 
 The dates above are repository evidence, not claims about when learning began
 or when every part of a project was completed.
@@ -36,6 +38,7 @@ or when every part of a project was completed.
 |---|---|---|
 | Data analysis | Python, pandas, NumPy | Credit Scoring System |
 | Classical ML | scikit-learn, CatBoost, validation and calibration analysis | Credit Scoring System |
+| Recommender systems | Implicit feedback, ALS, candidate generation, CatBoost ranking, Recall@K and MAP@K | Fashion Recommender System |
 | Deep Learning | TensorFlow/Keras, Mobile U-Net | Person Background Replacement |
 | NLP applications | FastAPI, Whisper, TF-IDF, document and media processing | AI Lecture / Meeting Summarizer |
 | AI agents | LangChain, ChromaDB, tool calling, dialogue memory | Student AI Agent for Telegram |
@@ -44,6 +47,7 @@ or when every part of a project was completed.
 
 | Project | Area | Main outcome | Status |
 |---|---|---|---|
+| [Fashion Recommender System](classical-ml/fashion-recommender-system/) | Recommender Systems / Classical ML | Hybrid retrieval and CatBoost ranking pipeline for personalized Top-12 recommendations | Ready with documented limitations |
 | [Credit Scoring System](classical-ml/credit-scoring-system/) | Classical ML | Reproducible probability-of-default pipeline with evaluation and CLI inference | Ready with documented limitations |
 | [Person Background Replacement](computer-vision/person-background-replacement/) | Deep Learning / CV | Mobile U-Net person segmentation for image and video background replacement | Portfolio project; deployment URL retained |
 | [Automatic Face Cropper](computer-vision/automatic-face-cropper/) | Computer Vision | Face detection and rectangular cropping with Haar Cascade, YuNet and batch processing | Ready |
@@ -51,6 +55,39 @@ or when every part of a project was completed.
 | [Student AI Agent for Telegram](ai-agents/student-ai-agent-telegram/) | AI Agents / RAG | Telegram assistant with tools, local-material retrieval and conversation memory | Portfolio project |
 
 ## Classical Machine Learning
+
+### Fashion Recommender System
+
+An end-to-end recommender-system project on a limited 2019 H&M dataset. Given
+a customer's purchase history, it produces 12 personalized fashion-item
+recommendations for the following seven-day window.
+
+```text
+Temporal validation
+→ Candidate generation: ALS + Content-Based + Personal History + Popularity
+→ Candidate merge
+→ User, item, user-item and category-affinity features
+→ CatBoost ranking
+→ Top-12 recommendations
+```
+
+The project uses a temporal split instead of a random split, separates
+retrieval from ranking, evaluates all approaches on the same 2,000 warm-user
+test cohort and independently verifies the final recommendation artifact.
+
+| Model | Recall@12 | MAP@12 | HitRate@12 |
+|---|---:|---:|---:|
+| Popularity baseline | 0.01625 | 0.00412 | 0.0170 |
+| Recent History | 0.01600 | 0.00615 | 0.0175 |
+| **CatBoost Hybrid** | **0.01717** | **0.00784** | **0.0185** |
+
+CatBoost Hybrid is the best final model. Candidate Recall@250 is **5.735%**;
+candidate generation is the main current bottleneck and the primary future
+improvement direction.
+
+![Fashion recommender model comparison](classical-ml/fashion-recommender-system/reports/figures/model_comparison.png)
+
+[Open Fashion Recommender System](classical-ml/fashion-recommender-system/)
 
 ### Credit Scoring System
 
@@ -221,6 +258,7 @@ ml-portfolio/
 ├── assets/
 │   └── portfolio/
 ├── classical-ml/
+│   ├── fashion-recommender-system/
 │   └── credit-scoring-system/
 ├── computer-vision/
 │   ├── automatic-face-cropper/
@@ -235,7 +273,7 @@ ml-portfolio/
 
 | Area | Technologies used in the portfolio |
 |---|---|
-| Data and classical ML | Python, pandas, NumPy, scikit-learn, CatBoost, joblib |
+| Data and classical ML | Python, pandas, NumPy, SciPy sparse, scikit-learn, implicit, CatBoost, joblib |
 | Deep learning and CV | TensorFlow, Keras, MobileNetV2, OpenCV, Pillow |
 | APIs and interfaces | FastAPI, Uvicorn, Streamlit, Telegram Bot API |
 | NLP and media | faster-whisper, FFmpeg, pypdf, python-docx, ReportLab |
@@ -266,6 +304,7 @@ python -m pytest -q
 
 Each project README contains its exact data, environment and run instructions:
 
+- [Fashion Recommender System instructions](classical-ml/fashion-recommender-system/README.md)
 - [Credit Scoring System instructions](classical-ml/credit-scoring-system/README.md)
 - [Person Background Replacement instructions](computer-vision/person-background-replacement/README.md)
 - [Automatic Face Cropper instructions](computer-vision/automatic-face-cropper/README.md)
@@ -277,7 +316,7 @@ On Windows, activate a virtual environment with
 
 ## Project Status
 
-All five projects are available in this monorepo with independent dependencies,
+All six projects are available in this monorepo with independent dependencies,
 documentation and run instructions.
 
 The original Git histories of the existing projects were retained during
@@ -285,6 +324,7 @@ consolidation. The Computer Vision application is deployed on Streamlit
 Community Cloud directly from this repository.
 
 - [Open the Streamlit application](https://ml-portfolio-qruttxsi28wzsfxkugjanc.streamlit.app)
+- [Open Fashion Recommender System](classical-ml/fashion-recommender-system/)
 - [Open Credit Scoring System](classical-ml/credit-scoring-system/)
 - [Open Person Background Replacement](computer-vision/person-background-replacement/)
 - [Open Automatic Face Cropper](computer-vision/automatic-face-cropper/)

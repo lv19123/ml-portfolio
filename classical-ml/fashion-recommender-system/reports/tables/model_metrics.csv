@@ -1,0 +1,8 @@
+model,Recall@12,MAP@12,HitRate@12,Candidate Recall,users_evaluated,notes
+CatBoost Hybrid,0.0171666666666666,0.0078422979797979,0.0185,0.0573499999999999,2000,CatBoostClassifier; common test cohort
+Popularity,0.01625,0.0041189484126984,0.017,,2000,Top-12 baseline; common cohort
+Recent Personal History,0.016,0.0061489448051948,0.0175,,2000,Top-12 baseline; common cohort
+Frequent Personal History,0.016,0.0061406114718614,0.0175,,2000,Top-12 baseline; common cohort
+ALS,0.0047666666666666,0.0013332323232323,0.0055,0.04085,2000,ALS Top-200 candidates
+Simple Hybrid,0.0031666666666666,0.0013694444444444,0.0035,0.0573499999999999,2000,Fixed 0.5/0.3/0.1/0.1 weights
+Content-Based,0.001,0.0002916666666666,0.001,0.0035,2000,Content-Based Top-50 candidates

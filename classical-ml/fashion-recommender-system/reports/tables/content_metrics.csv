@@ -1,0 +1,2 @@
+model,Candidate Recall,Recall@12,MAP@12,HitRate@12,users_evaluated,average_candidates,notes
+Content-Based,0.0035,0.001,0.0002916666666666667,0.001,2000,50.0,Content-Based Top-50 candidates
